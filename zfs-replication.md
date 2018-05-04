@@ -89,29 +89,25 @@ zfact/mainnet/factomd  13.5G  17.3G  13.5G  none
 
 Set the proper mountpoint.
 ```
-root@node2# zfs set mountpoint=/db/factomd zfact/mainnet/factomd
+root@node2# zfs set mountpoint=/var/lib/factomd zfact/mainnet/factomd
 ```
 
-Set proper permissions.
-```
-root@node2# chown factomd:factomd -R /db/factomd
-```
-
-Set up symlink.
-```
-root@node2# rm -r /var/lib/factomd
-root@node2# ln -s /db/factomd /var/lib/
-```
-
-Verify correct setup of symlinks within `/db/factomd`. Note that `.factom` is a
+Verify correct setup of symlinks within `/var/lib/factomd`. Note that `.factom` is a
 symlink to `./`.
 ```
-user@node2$ ls -al /db/factomd
+user@node2$ ls -al /var/lib/factomd
 total 7
 drwxr-xr-x 3 factomd factomd    4 Apr 30 15:56 .
 drwxr-xr-x 3 root    root    4096 Apr 30 15:10 ..
 lrwxrwxrwx 1 factomd factomd    2 Apr 30 15:56 .factom -> ./
 drwxr-xr-x 3 factomd factomd    5 Apr 27 02:39 m2
+```
+
+If the permissions or symlink is incorrect reinstall the Arch Linux factomd
+package.
+
+```
+# pacman -Sy factomd
 ```
 
 ### 5. Clean up snapshots.
