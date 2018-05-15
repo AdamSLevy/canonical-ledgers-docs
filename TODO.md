@@ -1,6 +1,5 @@
 Guides to write:
 - Creating an AMI
-- System updates
+- System update procedure
 - Update zfs-replication.md
 - Update new-ec2-setup.md
-- Update aws-vpc-architecture.md
