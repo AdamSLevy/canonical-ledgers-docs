@@ -42,10 +42,10 @@ connections with this VPC.
 | factom-testnet   | `10.10.0.0/16` | `pcx-09837944cd069b570` | Yes                   |
 
 ### ec2 Instances
-| Name            | IPv4        | Availability Zone | Services                              | Instance ID |
-|-----------------|-------------|-------------------|---------------------------------------|-------------|
-| SSH 2FA Bastion | `10.20.0.0` | us-west-2a        | OpenSSH with Google Authenticator 2FA |             |
-| InfluxData TICK | `10.20.1.0` | us-west-2b        | Update server, InfluxData TICK stack  |             |
+| Host Name                      | Type     | IPv4          | Availability Zone | Services                              | Instance ID         |
+|--------------------------------|----------|---------------|-------------------|---------------------------------------|---------------------|
+| bastion.canonical-ledgers.com  | t2.nano  | `10.20.1.146` | us-west-2b        | OpenSSH with Google Authenticator 2FA | i-080e2469b4ae32fb1 |
+| influxdb.canonical-ledgers.com | t2.small | `10.20.0.50`  | us-west-2a        | Update server, InfluxData TICK stack  | i-0b3cb53a13786d810 |
 
 ## factom-testnet
 The factom-testnet VPC is for running factom nodes on the testnet.
@@ -71,7 +71,7 @@ The factom-testnet VPC is for running factom nodes on the testnet.
 | web-services | `10.20.0.0/16` | `pcx-09837944cd069b570` | Yes                   |
 
 ### ec2 Instances
-| Name            | IPv4        | Availability Zone | Services                 | Instance ID |
+| Host Name                      | IPv4          | Availability Zone | Services                              | Instance ID         |
 |-----------------|-------------|-------------------|--------------------------|-------------|
 |                 | `10.10.0.0` | us-west-2a        | factomd Auth Node        |             |
 |                 | `10.10.1.0` | us-west-2b        | factomd Auth Node Backup |             |
@@ -102,10 +102,10 @@ us-west-1 (N. California) region.
 | factom-mainnet-2 | `10.0.0.0/16`  | `pcx-089abf97fee0be031` | Yes                   |
 
 ### ec2 Instances
-| Name            | IPv4       | Availability Zone | Services           | Instance ID |
-|-----------------|------------|-------------------|--------------------|-------------|
-|                 | `10.1.0.0` | us-west-1a        | factomd Auth Node  |             |
-|                 | `10.1.1.0` | us-west-1b        | factomd Guard Node |             |
+| Host Name                       | Type      | IPv4         | Availability Zone | Services            | Instance ID         |
+|---------------------------------|-----------|--------------|-------------------|---------------------|---------------------|
+| node1.us-west-1.factom-main.net | t2.xlarge | `10.1.0.220` | us-west-1a        | factomd Auth Node   | i-0210512e710a93ca3 |
+| node2.us-west-1.factom-main.net | t2.medium | `10.1.1.253` | us-west-1b        | factomd backup Node | i-0488fbc0bbc6bb0ef |
 
 ## factom-mainnet-2
 The factom-mainnet-2 VPC is for running factom nodes on mainnet in the
@@ -133,14 +133,8 @@ us-west-2 (Oregon) region.
 | factom-mainnet-1 | `10.0.0.0/16`  | `pcx-089abf97fee0be031` | Yes                   |
 
 ### ec2 Instances
-| Name            | IPv4       | Availability Zone | Services           | Instance ID |
-|-----------------|------------|-------------------|--------------------|-------------|
-|                 | `10.0.0.0` | us-west-1a        | factomd Auth Node  |             |
-|                 | `10.0.1.0` | us-west-1b        | factomd Guard Node |             |
+| Host Name                       | Type      | IPv4         | Availability Zone | Services            | Instance ID         |
+|---------------------------------|-----------|--------------|-------------------|---------------------|---------------------|
+| node1.us-west-2.factom-main.net | t2.xlarge | `10.0.2.38`  | us-west-2c        | factomd Auth Node   | i-0cf976cd3688bea61 |
+| node2.us-west-2.factom-main.net | t2.medium | `10.0.0.200` | us-west-2a        | factomd backup Node | i-0bda0ce4342a06455 |
 
-
-TODO:
-- Add elastic IPv4 addresses to ec2 Instances tables.
-- Add FQDN to ec2 Instances Table
-- Add all instances to ec2 Instances table
-- Double check all UUIDs
