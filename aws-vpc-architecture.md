@@ -71,11 +71,9 @@ The factom-testnet VPC is for running factom nodes on the testnet.
 | web-services | `10.20.0.0/16` | `pcx-09837944cd069b570` | Yes                   |
 
 ### ec2 Instances
-| Host Name                      | IPv4          | Availability Zone | Services                              | Instance ID         |
-|-----------------|-------------|-------------------|--------------------------|-------------|
-|                 | `10.10.0.0` | us-west-2a        | factomd Auth Node        |             |
-|                 | `10.10.1.0` | us-west-2b        | factomd Auth Node Backup |             |
-|                 | `10.10.2.0` | us-west-2c        | factomd Follower Node    |             |
+| Host Name                       | Type     | IPv4          | Availability Zone | Services            | Instance ID         |
+|---------------------------------|----------|---------------|-------------------|---------------------|---------------------|
+| node1.us-west-2.factom-test.net | t2.large | `10.10.2.235` | us-west-2c        | factomd Auth Node   | i-08942c04501d062ab |
 
 ## factom-mainnet-1
 The factom-mainnet-1 VPC is for running factom nodes on mainnet in the
